@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+
+      <title></title>
+  </head>
+  <body>
+      <header>
+      </header>
+      <nav>
+          <a href="home">Home</a>
+          <a href="/game">Games</a>  <!-- note href points to game.ejs -->
+          <a href="https://www.esrb.org/">Ratings</a>
+          <a href="/">Sign Up</a>
+          <a>Sign In</a> 
+          <a>Cart</a>
+        </nav>
+        <main>
+            <h1><%= title %></h1>
+
+            <% if(action == 'add') { %>
+    <form method="POST" action="/customer/add_customer">
+      <div>
+        <div>
+        <label for="fname">First Name<span >*</span></label>
+        <input type="text" name="fname" access="false" maxlength="30" id="fname"       
+         required="required" aria-required="true">
+    </div>
+    <div>
+        <label for="lname">Last Name<span>*</span></label>
+        <input type="text" name="lname" access="false" maxlength="30" id="lname"               
+          required="required" aria-required="true">
+    </div>
+    <div>
+        <label for="address1" >Address Line 1<span>*</span></label>
+        <input type="text" name="address1" access="false" maxlength="50" id="address1"   
+         required="required" aria-required="true">
+    </div>
+    <div>
+        <label for="address2">Address Line 2</label>
+        <input type="text" name="address2" access="false" maxlength="50" id="address2">
+    </div>
+    <div >
+        <label for="city" >City<span>*</span></label>
+        <input type="text" name="city" access="false" maxlength="30" id="city" required="required" aria-required="true">
+    </div>
+    <div>
+        <label for="county" >County/Province</label>
+        <input type="text" name="county" access="false" maxlength="50" id="county">
+    </div>
+    <div>
+        <label for="state" >State</label>
+        <input type="text" name="state" access="false" maxlength="20" id="state">
+    </div>
+ 
+    <div>
+        <label for="Country">Country<span>*</span></label>
+        <select name="country" id="country" required="required" aria-required="true">
+            <option value="United States" selected="true" id="Country-0">United States</option>
+            <option value="UK" id="Country-1">United Kingdom</option>
+            <option value="NVL" id="Country-2">Neverland</option>
+        </select>
+    </div>
+    <div>
+        <label for="zip">Zip/Postal Code</label>
+        <input type="text" name="zip" access="false" maxlength="10" id="zip">
+    </div>
+    <div>
+        <label for="bday">Birthday</label>
+        <input type="date" name="bday" access="false" id="bday">
+    </div>
+</div>
+    <div>
+<!--       <a href="/add_customer" class="button">Add</a> -->
+      <button type="submit">Add</button>
+      </div>
+    <br>
+          </form>
+            <% } %>
+        </main>
+    </body>
+</html>
